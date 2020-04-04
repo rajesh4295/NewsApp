@@ -1,0 +1,32 @@
+<ion-header no-border> 
+  <ion-navbar>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> --> 
+    <ion-title>
+      <div class="typewriter">
+          <div class="typewriter-text">NEWSBite</div>
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- <i class="fas fa-ellipsis-h"></i> -->
+
+<ion-content> 
+   <!-- <super-tabs scrollTabs="true" selectedTabIndex="1" toolbarColor="light" toolbarBackground="dark" indicatorColor="light" style="width:100%" >
+    
+    <super-tab [root]="topNews" title="Top Sites"></super-tab>
+    <super-tab [root]="topNews" title="Top News"></super-tab>
+    <super-tab [root]="topNews" title="Videos"></super-tab>
+    <super-tab [root]="topNews" title="Business"></super-tab>   
+    <super-tab [root]="topNews" title="Sports"></super-tab>
+        
+  </super-tabs> -->
+  
+  <super-tabs class="super-tabs" scrollTabs="true" selectedTabIndex="0" toolbarColor="light" toolbarBackground="superTabs" indicatorColor="light" [config]="{ dragThreshold: 30}">   
+       <super-tab *ngFor="let tab of tabs" [root]="tab.root" [title]="tab.title" tabsHideOnSubPages="true"></super-tab>         
+  </super-tabs>
+ 
+      
+</ion-content>
+

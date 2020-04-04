@@ -1,0 +1,18 @@
+
+<ion-navbar class="modal" *navbar>
+        <ion-title>Sample Modal</ion-title>
+ </ion-navbar>
+
+<ion-content padding class="sample-modal-page"  text-center>
+    <ion-fab style="position:absolute;right:0;top: 0">
+        <button ion-fab mini (click)="dismiss()" color="light"><i class="fa fa-times"></i></button>
+      </ion-fab>
+   <p>my sample modal page<p>
+     <img id="zodiac-img" src="assets/imgs/zodiac.png" height="70%" width="70%" />
+      <br />
+      <div style="color:#ff3b1b" [innerHtml]="ZodiacTitle"></div>
+      
+      <br />
+      <div style="color:white" [innerHtml]="zodiacDesc"></div>
+</ion-content>
+

@@ -1,0 +1,13 @@
+<ion-content>
+
+  <br />
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let zodiac of zodiacs;let i=index" (click)="presentProfileModal(i)" style="height:110px" text-center no-padding no-margin col-4 >              
+        <img class="profile-photo" [src]="zodiac.imgUrl" height="100" width="80"/> <br />     
+        <!-- <p style="color:#15181B">{{site.name}}</p>           -->
+      </ion-col>         
+    </ion-row>
+  </ion-grid>
+</ion-content>

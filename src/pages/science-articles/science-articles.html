@@ -1,0 +1,41 @@
+<ion-content #pageTop>
+
+  <ion-slides slidesPerView=3 initialSlide="5">
+    <ion-slide *ngFor="let category of categories" (click)=loadPage(category.pageName)>
+      <div class="categories" [ngStyle]="{'color':category.pageName === 'ScienceArticlesPage' ? 'white' : '#d6b8d2' }">{{category.title}}</div>
+    </ion-slide>
+    
+  </ion-slides>
+      
+  <ion-card  *ngFor="let feed of items" (click)=openWebPage(feed.url) class="card-background-page">
+
+<img [src]="feed?.image" style="width: 100%" /><br />
+<ion-badge style="background: #883955"><p style="color:white">{{feed?.publisher}}</p></ion-badge>
+<div class="card-title">{{feed?.title}}</div>
+<p style="color:rgb(129, 129, 129)">{{feed?.content}}</p>
+<p class="card-subtitle1">{{feed?.date | timeAgo}}
+&nbsp;/&nbsp;
+<ion-icon class="fa fa-twitter-square fa-2x"></ion-icon> &nbsp;
+<ion-icon class="fa fa-facebook-square fa-2x"></ion-icon> &nbsp;
+<ion-icon class="fa fa-google-plus-square fa-2x"></ion-icon> &nbsp;
+<ion-icon class="fa fa-whatsapp fa-2x"></ion-icon> &nbsp;
+<ion-icon class="fa fa-linkedin fa-2x"></ion-icon>            
+</p>
+<hr style="clear:both" />
+
+</ion-card>
+
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content
+     loadingSpinner="bubbles"
+     loadingText="Loading more videos...">
+   </ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+ <p *ngIf="reachedEnd" text-center>You read all News !!!</p>
+ <p text-center style="color:grey">Powered by NEWSAPI.org</p>
+
+<ion-fab style="position:absolute;right:0;bottom: 0">
+<button ion-fab mini (click)="pageScroller()" class="backToTop"><i class="fa fa-angle-up"></i></button>
+</ion-fab>
+
+</ion-content>

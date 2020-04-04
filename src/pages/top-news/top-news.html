@@ -1,0 +1,235 @@
+
+<ion-content>
+
+    <ion-slides *ngIf="wallpapers && wallpapers.length" slidesPerView=1 autoplay="8000" loop="true" (ionSlideWillChange)="slideChanged()">
+        <ion-slide *ngFor="let wallpaper of wallpapers">
+          <div>
+            <div class="quote">
+                <i class="fa fa-quote-right fa-2x"></i>&nbsp;<i>{{randomeQuote.quote}} <br />- {{randomeQuote.author}}</i>
+            </div>
+            <img [src]="wallpaper.imgUrl" width="100" height="80"/>
+          </div>
+        </ion-slide>
+        
+      </ion-slides>
+      
+  <!-- <div class="intro">
+    <div class="quote">
+    <p><i class="fa fa-quote-right fa-2x"></i>&nbsp;<i>{{randomeQuote.quote}} <br />- {{randomeQuote.author}}</i></p>
+     <ion-slides slidesPerView=1 >
+        <ion-slide  *ngFor="let randomeQuote of randomeQuote" style="height:20%" >
+            <i class="fa fa-quote-right fa-2x"></i>&nbsp;<i>{{randomeQuote.quote}} <br />- {{randomeQuote.author}}</i>
+        </ion-slide>
+        
+      </ion-slides>
+     </div>
+  </div> -->
+
+<ul>
+  <li>
+    <input type="checkbox" checked>
+    <i></i>
+    <h2>News</h2>
+    <p>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let site of newsSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+            <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+            <p style="color:#15181B">{{site.name}}</p>          
+          </ion-col>         
+        </ion-row>
+      </ion-grid>
+    </p>
+  </li>
+
+  <li>
+      <input type="checkbox" checked>
+      <i></i>
+      <h2>Blogs</h2>
+      <p>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let site of blogSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+              <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+              <p style="color:#15181B">{{site.name}}</p>          
+            </ion-col>         
+          </ion-row>
+        </ion-grid>
+      </p>
+    </li>
+
+  <li>
+    <input type="checkbox" checked>
+    <i></i>
+    <h2>Social</h2>
+    <p>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let site of socialSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+            <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+            <p style="color:#15181B">{{site.name}}</p>          
+          </ion-col>         
+        </ion-row>
+      </ion-grid>
+    </p>
+  </li>
+
+  <li>
+    <input type="checkbox" checked>
+    <i></i>
+    <h2>Shopping</h2>
+    <p>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let site of shoppingSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+            <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+            <p style="color:#15181B">{{site.name}}</p>          
+          </ion-col>         
+        </ion-row>
+      </ion-grid>
+    </p>
+  </li>
+
+  <li>
+    <input type="checkbox" checked>
+    <i></i>
+    <h2>Videos</h2>
+    <p>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let site of videoSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+            <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+            <p style="color:#15181B">{{site.name}}</p>          
+          </ion-col>         
+        </ion-row>
+      </ion-grid>
+    </p>
+  </li>
+</ul>
+
+<!-- <div class="accordion">
+  <ul>
+    <li>
+      <a href="#" class="acc-handle" tabindex="0">Accordion 1</a>
+      <div class="acc-panel">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let site of newsSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+              <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+              <p style="color:#15181B">{{site.name}}</p>          
+            </ion-col>         
+          </ion-row>
+        </ion-grid>
+      </div>
+    </li>
+  </ul>
+</div> -->
+
+<!-- <ion-card>
+  <ion-card-header (click)="toggleNews()">
+    <ion-avatar><img [src]="avatar" class="avatar-img" /></ion-avatar> 
+     <h4 ><i class="fa fa-microphone fa-lg" style="opacity: .5;"></i>&nbsp;&nbsp;News</h4><span ><i class="fa fa-angle-down fa-2x"></i></span> 
+    <ion-avatar item-start>
+        <img [src]="newsAvatar" class="avatar-img">
+      </ion-avatar>
+     <h2>News</h2>
+     <i class="fa fa-angle-down fa-2x"></i>
+     
+  </ion-card-header>
+  <ion-card-content #ccNews>
+      <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let site of newsSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+              <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+              <p style="color:#15181B">{{site.name}}</p>          
+            </ion-col>         
+          </ion-row>
+        </ion-grid>
+  </ion-card-content>
+</ion-card>
+<hr />
+<ion-card>
+    <ion-card-header (click)="toggleSocial()" class="social-header">
+       <ion-avatar><img [src]="avatar" class="avatar-img" /></ion-avatar>
+         <h4 ><i class="fa fa-share-alt fa-lg" style="opacity: .5;"></i>&nbsp;&nbsp;Social</h4><span ><i class="fa fa-angle-down fa-2x"></i></span> 
+        <ion-avatar item-start>
+            <img [src]="socialAvatar" class="avatar-img">
+          </ion-avatar>
+         <h2>Social</h2>
+         <i class="fa fa-angle-down fa-2x"></i>
+    </ion-card-header>
+    <ion-card-content #ccSocial>
+         <ion-grid>
+            <ion-row>
+              <ion-col *ngFor="let site of socialSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+                <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+                <p style="color:#15181B">{{site.name}}</p>          
+              </ion-col>         
+            </ion-row>
+          </ion-grid>
+    </ion-card-content>
+  </ion-card>
+<hr />
+  <ion-card>
+    <ion-card-header  class="sports-header">
+      <ion-avatar><img [src]="avatar" class="avatar-img" /></ion-avatar> 
+         <h4 ><i class="fa fa-trophy fa-lg" style="opacity: .5;"></i>&nbsp;&nbsp;Sports</h4><span ><i class="fa fa-angle-down fa-2x"></i></span> 
+        <ion-avatar item-start>
+            <img [src]="sportsAvatar" class="avatar-img">
+          </ion-avatar>
+         <h2>Sports</h2>
+         <i class="fa fa-angle-down fa-2x"></i>
+    </ion-card-header>
+    <ion-card-content #ccSocial>
+         <ion-grid>
+            <ion-row>
+              <ion-col *ngFor="let site of socialSites" (click)=openWebPage(site.siteUrl) style="height:110px" text-center no-padding no-margin col-3 >              
+                <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+                <p style="color:#15181B">{{site.name}}</p>           
+              </ion-col>         
+            </ion-row>
+          </ion-grid>
+    </ion-card-content>
+  </ion-card> -->
+
+<!-- <ion-card>
+    <ion-card-header (click)="toggleAccordian()"><i class="fa fa-microphone fa-lg"></i>
+       <h4 style="float: left"><i class="fa fa-share-alt fa-lg">&nbsp;&nbsp;</i>Social</h4><span style="float: right"><i class="fa fa-angle-down fa-2x"></i></span>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                
+              </ion-col>
+                  
+            </ion-row>
+          </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-header (click)="toggleAccordian()">
+         <h4 style="float: left"><i class="fa fa-trophy fa-lg">&nbsp;&nbsp;</i>Sports</h4><span style="float: right"><i class="fa fa-angle-down fa-2x"></i></span>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+                  
+                </ion-col>
+                    
+              </ion-row>
+            </ion-grid>
+      </ion-card-content>
+    </ion-card> -->
+<!-- <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let site of newsSites" (click)=openWebPage(site.siteUrl) style="height:100px" text-center no-padding no-margin col-4 >              
+        <img class="profile-photo" [src]="site.imgUrl" height="50" width="50" /> <br />     
+        <p style="font-weight:bold">{{site.name}}</p>          
+      </ion-col>         
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>

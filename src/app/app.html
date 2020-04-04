@@ -1,0 +1,34 @@
+<!-- <ion-menu [content]="content" persistent="true" >
+  <ion-header>
+    <ion-toolbar class="menu-tool">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="side-menu">
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <div class="wrapper">
+        <ul>
+          <li (click)="callHome()">Home</li>
+          <li>
+            <input type="checkbox" id="list-item-1">
+            <label for="list-item-1" class="first">News</label>
+            <ul>
+              <li *ngFor="let p of videoPages" (click)="openPage(p)">{{p.title}}</li>
+            </ul>
+          </li>
+        </ul>
+        </div>
+  </ion-content>
+
+  
+
+</ion-menu> -->
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus  -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

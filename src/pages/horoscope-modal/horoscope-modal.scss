@@ -1,0 +1,26 @@
+page-horoscope-modal {
+    
+     .sample-modal-page {
+        padding: 30px;
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        // margin: 0 auto;
+        // border-radius:5%;
+        display: block;
+        width: 90%;
+        height: 85%;
+    }
+    #zodiac-img {
+		-webkit-animation: rotation 15s infinite linear;
+}   
+    @-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+}
