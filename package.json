@@ -42,7 +42,7 @@
     "cordova-promise-polyfill": "0.0.2",
     "cors": "^2.8.4",
     "deploy": "1.0.3",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "ionic-angular": "3.9.2",
     "ionic2-super-tabs": "^4.3.1",
